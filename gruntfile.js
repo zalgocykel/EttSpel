@@ -50,6 +50,10 @@ module.exports = function(grunt) {
             audio: {
                 files: 'src/audio/**/*',
                 tasks: ['copy:audio','notify:watch_audio']
+            },
+            maps: {
+                files: 'src/maps/**/*',
+                tasks: ['copy:maps','notify:watch_maps']
             }
         },
         notify: {
@@ -66,6 +70,11 @@ module.exports = function(grunt) {
             watch_audio: {
                 options: {
                     message: 'Audio changed'
+                }
+            },
+            watch_maps: {
+                options: {
+                    message: 'Maps changed'
                 }
             }
 
@@ -144,7 +153,15 @@ module.exports = function(grunt) {
                     dest: 'build/',
                     expand: true
                 }]
-            }
+            },
+            maps: {
+                files: [{
+                    cwd: 'src/maps/',
+                    src: ['**'],
+                    dest: 'build/maps/',
+                    expand: true
+                }]
+            },
         },
         uglify: {
             options: {
@@ -184,7 +201,8 @@ module.exports = function(grunt) {
         'copy:images',
         'copy:audio', 
         'copy:phaser', 
-        'copy:html', 
+        'copy:html',
+        "copy:maps", 
         'connect',
         'open',
         'watch',
@@ -199,7 +217,8 @@ module.exports = function(grunt) {
         'copy:images',
         'copy:audio', 
         'copy:phaser', 
-        'copy:html', 
+        'copy:html',
+        "copy:maps",
         'cacheBust',
         'connect', 
         'open', 

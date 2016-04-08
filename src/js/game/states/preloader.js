@@ -35,8 +35,13 @@ preloader.preload = function () {
 	this.game.load.image('longBlock', 'images/test.png');
 	//this.load.atlas('playButton', 'images/play_button.png', 'images/play_button.json');
 	this.game.load.audio('titleMusic', ['audio/CloZee-Koto.mp3']);
-};
+	this.game.load.tilemap('map', 'maps/collide_test.json', null, Phaser.Tilemap.TILED_JSON);
+	this.game.load.image('sheet', 'maps/sheet.png');
+	this.game.load.audio('jump', 'audio/jump.wav');
+	this.game.load.audio('grunt', 'audio/enemyblurb-noise.wav');
 
+};
+console.log
 preloader.create = function () {
 	this.game.preloadBar.cropEnabled = false;
 };
@@ -59,11 +64,11 @@ preloader.update = function () {
 		showDots = dots.join("")
 		audioDecodeText.setText("Decoding sound"+dots);
 	}
-	if (this.game.cache.isSoundDecoded('titleMusic') && this.game.ready == false)
-	{
+	//if (this.game.cache.isSoundDecoded('titleMusic') && this.game.ready == false)
+	//{
 		this.game.ready = true;
 		this.game.state.start('mainmenu');
-	}
+	//}
 
 };
 
