@@ -49,7 +49,7 @@ game.create = function() {
         this.enemies.push(new enemyblob(this.game, enemyPos,enemyPos, direction,this.player));
         this.add.existing(this.enemies[i]);
     }
-    this.game.world.setBounds(0, 0, 4000, 4000);
+    this.game.world.setBounds(0, 0, 4000, 3000);
 };
 game.update = function() {
     this.game.physics.arcade.collide(this.player, this.layer);
@@ -75,7 +75,7 @@ game.quitGame = function() {
 
 game.render = function() {
 
-
+ 
     //this.game.debug.bodyInfo(this.enemyblob, 32, 32);
 
 }
