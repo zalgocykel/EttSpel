@@ -11,17 +11,13 @@ var player = function(game, x, y, key, frame) {
     this.body.setSize(56, 72);
     this.jumpSound = this.game.add.audio('jump');
     this.body.gravity.y = 2000;
-    //this.animations.add('walk',[1]);
     this.animations.add('right',[8,9,10,11],10,true);
-    //this.animations.add('jump',[9,10,11,12,13,14,15,16],10,true);
     this.animations.add('left',[4,5,6,7],10,true);
     this.anchor.setTo(0.5, 1);
     this.speed = 400;
     this.game.camera.follow(this);
     this.game.camera.deadzone = new Phaser.Rectangle(100, 100, 200, 100);
-    //this.body.bounce.y = 0.2;
-    //this.body.gravity.y = 300;
-    //this.createPlayer();
+
 
 };
 player.prototype = Object.create(Phaser.Sprite.prototype);

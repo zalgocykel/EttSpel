@@ -13,7 +13,7 @@ preloader.preload = function () {
 	this.game.load.onFileComplete.add(this.fileComplete, this.game);
 	//this.load.spritesheet('cat', 'images/cat.png',542,474,8);
 	this.game.load.spritesheet('dude', 'images/dude.png', 56, 71);
-	this.game.load.atlasJSONHash('enemyblob', 'images/enemy.png', 'images/enemy.json');
+	this.game.load.spritesheet('enemyblob', 'images/enemy.png',359,367);
 	//	These are the assets we loaded in Boot.js542 474
 	//	A nice sparkly background and a loading progress bar
 
@@ -39,6 +39,7 @@ preloader.preload = function () {
 	this.game.load.image('sheet', 'maps/sheet.png');
 	this.game.load.audio('jump', 'audio/jump.wav');
 	this.game.load.audio('grunt', 'audio/enemyblurb-noise.wav');
+	this.game.load.audio('caught', 'audio/gotIt.wav');
 
 };
 console.log

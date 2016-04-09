@@ -57,18 +57,13 @@ game.update = function() {
     {
         this.game.physics.arcade.collide(this.enemies[i], this.layer, this.enemies[i].moveEnemy);
         this.enemies[i].body.velocity.x = this.enemies[i].xSpeed;
+
     }
+
     
 };
 
-game.addPlatform = function(posX, posY, asset, group) {
-    platform = this.game.add.sprite(posX, posY, asset)
-    platform.anchor.setTo(0.5);
-    this.game.physics.enable(platform, Phaser.Physics.ARCADE);
-    platform.body.immovable = true;
-    group.add(platform);
-    //platform.body.debug = true;
-}
+
 game.quitGame = function() {
     this.state.start('mainmenu');
 };
