@@ -1,10 +1,11 @@
 var player = require('../includes/player'),
     //addPlatform = require('../includes/block'),
     enemyblob = require('../includes/enemyblob'),
-    gravitygun = require('../includes/gravitygun'),
+    machinegun = require('../includes/machinegun'),
     game = {};
 
 game.create = function() {
+    this.background = this.game.add.sprite(0, 0, 'sky');
     this.map = this.game.add.tilemap('map');
 
     this.map.addTilesetImage('sheet');
@@ -50,9 +51,11 @@ game.create = function() {
         this.enemies.push(new enemyblob(this.game, enemyPos,enemyPos, direction,this.player));
         this.add.existing(this.enemies[i]);
     }
-    this.gravitygun = new gravitygun(this.game, 200, 400,this.layer,this.player,this.enemies);
-    this.game.add.existing(this.gravitygun);
+    this.machinegun = new machinegun(this.game, 200, 400,this.layer,this.player,this.enemies);
+    this.game.add.existing(this.machinegun);
     this.game.world.setBounds(0, 0, 4000, 3000);
+    this.background.width = 4000;
+    this.background.height = 3000;
 };
 game.update = function() {
     this.game.physics.arcade.collide(this.player, this.layer);
@@ -72,7 +75,7 @@ game.quitGame = function() {
 game.render = function() {
 
  
-    this.game.debug.bodyInfo(this.enemies[3], 32, 32);
+    //this.game.debug.bodyInfo(this.machinegun, 32, 32);
 
 }
 module.exports = game;

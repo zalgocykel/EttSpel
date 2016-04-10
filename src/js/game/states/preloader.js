@@ -29,6 +29,11 @@ preloader.preload = function () {
 
 	//	Here we load the rest of the assets our game needs.
 	this.game.load.image('gridmap', 'images/gridmap.png');
+	this.game.load.image('bullet', 'images/bullet.png');
+	this.game.load.image('sky', 'images/blue.jpg');
+	this.game.load.image('gravityGun', 'images/gravityGun.png');
+	this.game.load.image('machinegun', 'images/machinegun.png');
+	this.game.load.spritesheet('beam', 'images/beam.png', 100, 20);
 	this.game.load.image('playButton', 'images/winner.png');
 	this.game.load.image('titlepage', 'images/title.jpg');
 	this.game.load.image('block', 'images/test.png');
@@ -40,6 +45,8 @@ preloader.preload = function () {
 	this.game.load.audio('jump', 'audio/jump.wav');
 	this.game.load.audio('grunt', 'audio/enemyblurb-noise.wav');
 	this.game.load.audio('caught', 'audio/gotIt.wav');
+	this.game.load.audio('beam', 'audio/beam.wav');
+	this.game.load.audio('shoot', 'audio/shoot.wav');
 
 };
 console.log

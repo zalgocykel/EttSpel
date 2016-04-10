@@ -5,7 +5,7 @@ var _ = require('lodash'),
         mainmenu: require('./states/mainmenu.js'),
         game: require('./states/game.js')
     },
-    game = new Phaser.Game(800, 600, Phaser.AUTO, 'game');
+    game = new Phaser.Game(1000, 800, Phaser.AUTO, 'game');
 // Register each state.
 _.each(states, function(state, key) {
     game.state.add(key, state);
