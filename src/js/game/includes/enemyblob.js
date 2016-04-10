@@ -31,7 +31,7 @@ enemyblob.prototype = Object.create(Phaser.Sprite.prototype);
 enemyblob.prototype.constructor = enemyblob;
 
 enemyblob.prototype.update = function() {
-
+	this.body.velocity.x = this.xSpeed;
 	
 	this.rangeFinder.x = this.body.x;
 	this.rangeFinder.y = this.body.y;
@@ -51,9 +51,10 @@ enemyblob.prototype.update = function() {
 };
 
 enemyblob.prototype.moveEnemy = function(enemy, platform) {
+	console.log(enemy.body.blocked.left)
     if(enemy.body.blocked.left || enemy.body.blocked.right){
 		enemy.body.velocity.y = -50;
-        enemy.rangeFinder.xSpeed *= -0.1;
+        enemy.xSpeed *= -1;
 		if(enemy.xSpeed > 0){
 			enemy.scale.x = -0.1;
 		}
